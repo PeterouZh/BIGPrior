@@ -8,12 +8,15 @@ from skimage.measure import compare_ssim
 import torch
 from torch.autograd import Variable
 
-from PerceptualSimilarity.models import dist_model
+# from PerceptualSimilarity.models import dist_model
 
 class PerceptualLoss(torch.nn.Module):
     def __init__(self, model='net-lin', net='alex', colorspace='rgb', spatial=False, use_gpu=True, gpu_ids=[0], version='0.1'): # VGG using our perceptually-learned weights (LPIPS metric)
     # def __init__(self, model='net', net='vgg', use_gpu=True): # "default" way of using VGG as a perceptual loss
         super(PerceptualLoss, self).__init__()
+
+        from PerceptualSimilarity.models import dist_model
+
         print('Setting up Perceptual loss...')
         self.use_gpu = use_gpu
         self.spatial = spatial

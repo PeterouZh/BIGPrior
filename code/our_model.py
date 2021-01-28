@@ -1,5 +1,6 @@
 import torch.nn as nn
-from models import DnCNN, RIDNET, MemNet
+from models import DnCNN
+# from models import DnCNN, RIDNET, MemNet
 from utils import weights_init_kaiming
 import glob
 import os
